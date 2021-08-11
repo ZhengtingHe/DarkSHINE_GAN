@@ -7,3 +7,5 @@ The architecure of network is WGAN, where the output of discriminator is output 
 
 ## LOGAN
 Now with latent opimization, the noise will be optimised hence the generator will have more authentic output.
+
+## DarsSHINE now officially online : https://www.darkshine.top
