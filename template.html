@@ -1,0 +1,95 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>report</title>
+    <style type="text/css">
+    h1 {margin-left: 20px}
+    h2 {margin-left: 20px;
+        font-size: 19px;
+        font-weight: bold;
+        display: inline-block;
+        padding-left: 10px;
+        border-left: 5px solid #916dd5;}
+    h3 {margin-left: 20px}
+    h4 {margin-left: 20px;
+        margin-bottom: -5px}
+    table {margin-left: 20px;
+           margin-top: 5px;
+           margin-bottom: 5px}
+    p {margin-left: 20px}
+    a {margin-top: -5px;}
+    </style>
+</head>
+<h1>Training report</h1>
+    <body>
+    <div>
+        <h2>Hyperparamer form</h2>
+        <table border="1" width = "40%" cellspacing='0' cellpadding='0'>
+        <tr>
+            <th>Hyperparameter</th>
+            <th>Value</th>
+        </tr>
+        {% for item in items %}
+        <tr align='center'>
+            <td>{{ item }}</td>
+            <td>{{ items[item] }}</td>
+        </tr>
+        {% endfor%}
+        </table>
+    </div>
+    <div>
+        <h2>Network</h2>
+        <div>
+            <h3>Discriminator</h3>
+            <a name="{{ D_network }}"> <img src="{{ D_network }}" width="50%"></a>
+        </div>
+        <div>
+            <h3>Generator</h3>
+            <a name="{{ G_network }}"> <img src="{{ G_network }}" width="50%"></a>
+        </div>
+    </div>
+
+    <div>
+        <h2>Training process</h2>
+        <h3>Epoch loss</h3>
+        <a name="{{ epoch_loss }}"> <img src="{{ epoch_loss }}" width="50%"></a>
+    </div>
+
+    <div>
+        <h2>Distribution</h2>
+
+        <h3>BDT</h3>
+        <a name="{{ BDT_log }}"> <img src="{{ BDT_log }}" width="60%"></a>
+        <a name="{{ BDT }}"> <img src="{{ BDT }}" width="60%"></a>
+        <h3>Folding</h3>
+        <a name="{{ Folding_log }}"> <img src="{{ Folding_log }}" width="60%"></a>
+        <a name="{{ Folding }}"> <img src="{{ Folding }}" width="60%"></a>
+    </div>
+
+    <div>
+        <h2>KS value</h2>
+        <table border="1" width = "40%" cellspacing='0' cellpadding='0'>
+        <tr>
+            <th>Reweighting algorithm</th>
+            <th>Value</th>
+        </tr>
+        {% for key in KS_value %}
+        <tr align='center'>
+            <td>{{ key }}</td>
+            <td>{{ KS_value[key] }}</td>
+        </tr>
+        {% endfor%}
+        </table>
+        <a name="{{ KS_table }}"> <img src="{{ KS_table }}" width="40%"></a>
+    </div>
+
+    <div>
+        <h2>Correlation</h2>
+        <div>
+            <img name="{{ Correlation }}"> <img src="{{ DSS_corre }}" width="40%" title="DSS">DSS</img>
+            <img src="{{ GAN_corre }}" width="40%" title="GAN">GAN</img>
+        </div>
+    </div>
+
+    </body>
+</html>

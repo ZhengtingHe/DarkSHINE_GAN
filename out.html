@@ -1,0 +1,225 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>report</title>
+    <style type="text/css">
+    h1 {margin-left: 20px}
+    h2 {margin-left: 20px;
+        font-size: 19px;
+        font-weight: bold;
+        display: inline-block;
+        padding-left: 10px;
+        border-left: 5px solid #916dd5;}
+    h3 {margin-left: 20px}
+    h4 {margin-left: 20px;
+        margin-bottom: -5px}
+    table {margin-left: 20px;
+           margin-top: 5px;
+           margin-bottom: 5px}
+    p {margin-left: 20px}
+    a {margin-top: -5px;}
+    </style>
+</head>
+<h1>Training report</h1>
+    <body>
+    <div>
+        <h2>Hyperparamer form</h2>
+        <table border="1" width = "40%" cellspacing='0' cellpadding='0'>
+        <tr>
+            <th>Hyperparameter</th>
+            <th>Value</th>
+        </tr>
+        
+        <tr align='center'>
+            <td>in_file</td>
+            <td>/lustre/collider/hezhengting/TrainningData/PN_ECAL_ana_4e5.hdf5</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>disc_lr</td>
+            <td>0.001</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>end_learning_rate</td>
+            <td>0.0001</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>disc_opt</td>
+            <td>Adam</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>adam_beta_1</td>
+            <td>0.5</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>adam_beta_2</td>
+            <td>0.9</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>decay_steps</td>
+            <td>1000</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>decay_power</td>
+            <td>2</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>decay_rate</td>
+            <td>0.9</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>gen_lr</td>
+            <td>0.0005</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>gen_opt</td>
+            <td>Nadam</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>energy_cut</td>
+            <td>0.001</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>generator_extra_step</td>
+            <td>1</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>discriminator_extra_steps</td>
+            <td>1</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>batch_size</td>
+            <td>600</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>final_layer_activation</td>
+            <td>softplus</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>z_alpha</td>
+            <td>0.9</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>z_beta</td>
+            <td>0.1</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>g_network_type</td>
+            <td>DownSampling</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>use_latent_optimization</td>
+            <td>True</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>lambda_E</td>
+            <td>100.0</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>E_factor</td>
+            <td>0</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>latent_size</td>
+            <td>1024</td>
+        </tr>
+        
+        </table>
+    </div>
+    <div>
+        <h2>Network</h2>
+        <div>
+            <h3>Discriminator</h3>
+            <a name="images/D_network.png"> <img src="images/D_network.png" width="50%"></a>
+        </div>
+        <div>
+            <h3>Generator</h3>
+            <a name="images/G_network.png"> <img src="images/G_network.png" width="50%"></a>
+        </div>
+    </div>
+
+    <div>
+        <h2>Training process</h2>
+        <h3>Epoch loss</h3>
+        <a name="images/epoch_loss.png"> <img src="images/epoch_loss.png" width="50%"></a>
+    </div>
+
+    <div>
+        <h2>Distribution</h2>
+
+        <h3>BDT</h3>
+        <a name="images/BDT_log.png"> <img src="images/BDT_log.png" width="60%"></a>
+        <a name="images/BDT.png"> <img src="images/BDT.png" width="60%"></a>
+        <h3>Folding</h3>
+        <a name="images/Folding_log.png"> <img src="images/Folding_log.png" width="60%"></a>
+        <a name="images/Folding.png"> <img src="images/Folding.png" width="60%"></a>
+    </div>
+
+    <div>
+        <h2>KS value</h2>
+        <table border="1" width = "40%" cellspacing='0' cellpadding='0'>
+        <tr>
+            <th>Reweighting algorithm</th>
+            <th>Value</th>
+        </tr>
+        
+        <tr align='center'>
+            <td>original</td>
+            <td>0.382222</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>Gradient Boosted Reweighter</td>
+            <td>0.068429</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>Bins - based: total energy</td>
+            <td>0.347552</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>Bins - based: total energy and x_sq</td>
+            <td>0.242355</td>
+        </tr>
+        
+        <tr align='center'>
+            <td>Folding reweighter</td>
+            <td>0.1605</td>
+        </tr>
+        
+        </table>
+        <a name="images/KS_value.png"> <img src="images/KS_value.png" width="40%"></a>
+    </div>
+
+    <div>
+        <h2>Correlation</h2>
+        <div>
+            <img name=""> <img src="images/DSS_corre.png" width="40%" title="DSS">DSS</img>
+            <img src="images/GAN_corre.png" width="40%" title="GAN">GAN</img>
+        </div>
+    </div>
+
+    </body>
+</html>
